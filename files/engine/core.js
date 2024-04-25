@@ -1,5 +1,5 @@
 /** stealing from internal-cyth **/
-const trace = function(txt, ty, ...nono) {
+const trace = function (txt, ty, ...nono) {
   const ver = { warn: "Warning", info: "Notice" };
   const hex = { warn: "#ff0019", info: "#ffa600" };
   const pat = `color: ${hex[ty]}; font-weight: bold; font-family: "Omori"; font-size: 13px;`;
@@ -11,9 +11,22 @@ const trace = function(txt, ty, ...nono) {
   }
 };
 
-window.onerror = function(errorMsg, url, lineNumber) {
-  trace(`An internal failure has occurred while attempting to perform an operation. Error: "${errorMsg}" ${url}:${lineNumber}`, "warn");
-};
+window.addEventListener("error", (e) => trace(`An exception has occurred: "${e.message}" ${e.filename}:${e.lineno}`, "warn"));
+
+function hikki() {
+  const hueh = new Audio("https://banami.nekoweb.org/files/sounds/bg.mp3");
+  const playAudio = () => {
+    hueh.play().then(() => { });
+  };
+
+  hueh.addEventListener("ended", () => {
+    hueh.currentTime = 0;
+    playAudio();
+    trace("hikki", "info");
+  });
+
+  document.body.addEventListener("click", playAudio, { once: true });
+}
 
 let currentPage = "";
 let banamiPfpStatus = true;
@@ -26,12 +39,12 @@ function nekoPage(pageName) {
 
   const titleMain = document.getElementById("neko-title");
   const textMain = document.getElementById("neko-text");
-  const body = document.querySelector("body");
+  const body = document.body;
   const backButton = document.querySelector(".neko-back-button");
-  const banamiPfp = document.getElementById("bana-img-pfp")
-  
+  const banamiPfp = document.getElementById("bana-img-pfp");
+
   const url = `https://banami.nekoweb.org/pages/${pageName}/index.json`;
-    
+
   fetch(url)
     .then((response) => {
       if (!response.ok) {
@@ -46,15 +59,15 @@ function nekoPage(pageName) {
 
       titleMain.innerHTML = title;
       textMain.innerHTML = parseText(data.text);
-      
+
       if (banamiPfpStatus != false) {
-            banamiPfp.remove();
-            banamiPfpStatus = false;
-            trace("pfp removed", "info");
+        banamiPfp.remove();
+        banamiPfpStatus = false;
+        trace("pfp removed", "info");
       } else {
-          trace("pfp dead lol, doing nothing.","info");
+        trace("pfp dead lol, doing nothing.", "info");
       }
-      
+
       if (data.banamiBackground !== undefined) {
         body.style.backgroundImage = `url(${data.banamiBackground})`;
         body.style.position = "fixed";
@@ -73,14 +86,10 @@ function nekoPage(pageName) {
       currentPage = pageName;
     })
     .catch((error) => {
+      trace(`An exception has occurred: ${error.message}`, "warn");
       titleMain.textContent = "Womp womp";
-      textMain.textContent =
-        "Looks like you just tried making Orange Joe.... guess you didn't like it";
+      textMain.innerHTML = "Looks like you just tried making Orange Joe.... guess you didn't like it | actual: you shouldn't be able to see this message. Please refresh your page, and if the problem still persists, please file a bug report over at <a href='https://pukacyi.github.io/Banami'>Github (Issues)</a>.";
     });
-
-  if (currentPage != "dni") {
-    body.style.backgroundIMage = "none";
-  }
 }
 
 function parseText(text) {
@@ -97,19 +106,4 @@ function parseText(text) {
     return `<span style="${styles}">${p2}</span>`;
   });
   return text;
-}
-
-function hikki() {
-  const hueh = new Audio("https://banami.nekoweb.org/files/sounds/bg.mp3");
-  const playAudio = () => {
-    hueh.play().then(() => {});
-  };
-
-  hueh.addEventListener("ended", () => {
-    hueh.currentTime = 0;
-    playAudio();
-    trace("hikki", "info");
-  });
-
-  document.body.addEventListener("click", playAudio, { once: true });
 }

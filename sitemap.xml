@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <!-- Keeper of the sakura crawlers - recommend seeing this on desktop (may be funky on mobile) -->
+    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+    <!-- @@@@@@@@@@@@@@@@@@@@@@@,...&/...,@@@@@@@@@@@@@@@@@@@@@@ -->
+    <!-- @@@@@@@@@@@@@@@@@@@@...           ..@@@@@@@@@@@@@@@@@@@ -->
+    <!-- @@@@@@@@@@@@@@@@@@..                ..@@@@@@@@@@@@@@@@@ -->
+    <!-- @@@@@@@@@@@@@@@@@.                   .,@@@@@@@@@@@@@@@@ -->
+    <!-- @@@@@@@@@&,...,,/,..     ......    ..,*,.. ..,&@@@@@@@@ -->
+    <!-- @@@@@@@,        ..,........,........,...         ..,@@@@ -->
+    <!-- @@@@@@,.          ...,....,,,*,,,..,,...             ,@@@ -->
+    <!-- @@@@,.          ....,,//(./////**(**.....       .....*@@ -->
+    <!-- @@*,..        ....,,*,#,#,####,#///,,,....       ....*@ -->
+    <!-- @@*..\          ..,,**/##/((((((/#(/*,,,....      ....*@ -->
+    <!-- @@*..\          ..,,**/##/((((((/#(/*,,,....      ....*@ -->
+    <!-- @@@,...       ....,*/*#(((#((#/((#//,,....       ...*@@ -->
+    <!-- @@@@*....      ..,*/###/(#(*#(((/###((,...     ...,*@@@ -->
+    <!-- @@@@@@@,.......,,,,,,*/((######((/*,,.......*,.,*@@@@@@ -->
+    <!-- @@@@@@@@@,...    ...,,,***(##(/**,,,....      ,@@@@@@@@ -->
+    <!-- @@@@@@@@...      .........,*/,,,........      .,@@@@@@@ -->
+    <!-- @@@@@@@@...        .........,.. .. .         ..,@@@@@@@ -->
+    <!-- @@@@@@@@,...               ....             ...*@@@@@@@ -->
+    <!-- @@@@@@@@,.......         ..*..        . .....,*@@@@@@@ -->
+    <!-- @@@@@@@@@@,.,,............**.... .........***@@@@@@@@@ -->
+    <!-- @@@@@@@@@@@@*,..,,,,,,*@@@@@@*,..,..,,*/@@@@@@@@@@@@ -->
+    <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+    <url>
+        <loc>https://banami.nekoweb.org/</loc>
+        <lastmod>2024-04-20</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/cythentic</loc>
+        <lastmod>2024-04-20</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/dev</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/files</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/pages</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/not.found.html</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/elements.css</loc>
+        <lastmod>2024-04-20</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/omo.gif</loc>
+        <lastmod>2024-04-20</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/omori_sit.gif</loc>
+        <lastmod>2024-04-20</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/files/styles/dev.css</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/files/styles/index.css</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/files/sounds/bg.mp3</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/files/images/banamiWarning.png</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/files/images/blackspace.png</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/files/images/cyi.png</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/files/images/hero-screenshot.png</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/files/images/mewo-bg.gif</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/files/images/archived-shit/stupidity.png</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+        <url>
+        <loc>https://banami.nekoweb.org/files/images/archived-shit/hero-screenshot-old.png</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/files/fonts/omori-scary.ttf</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/files/fonts/omori.ttf</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/files/engine/core.js</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/pages/socials/index.json</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/pages/interests/index.json</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/pages/dni/index.json</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/pages/cyi/index.json</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+    <url>
+        <loc>https://banami.nekoweb.org/pages/about-me/index.json</loc>
+        <lastmod>2024-04-08</lastmod>
+    </url>
+</urlset>

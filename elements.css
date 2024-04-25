@@ -1,0 +1,29 @@
+/* This file defines how custom elements will look like, setting CSS that breaks main nekoweb site on purpose is prohibited and may result in ban and site deletion! */
+
+/* Must start with ".site-box". Change how your website will appear on main nekoweb site: https://lune.dimden.dev/405a44b7e5.png */
+
+.site-box {
+  text-align: center;
+  font-family: Arial; 
+  background-image: url('https://banami.nekoweb.org/omo.gif'); /* Replace with a valid nekoweb URL */
+  background-repeat: no-repeat;
+  border-radius: 2px;
+  background-color: black;
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  filter: drop-shadow(0 0 1px black); 
+}
+
+.site-box > a > p {
+    color: #FFF;
+    font-weight: bold;
+}
+.site-box > a > span {
+    color: #FFF;
+    font-weight: bold;
+}
+
+.site-box .sitefeature {
+  visibility: hidden;
+}
