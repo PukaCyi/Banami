@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Lexend:wght@100..900&display=swap');
+
+a {
+    text-decoration: none !important;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+  margin: 0;
+  padding: 0;
+  background-color: #040002;
+  color: white;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+.container {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  outline: 2px dashed white;
+}
+
+
+a {
+  color: white;
+}
+
+footer {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: #040002;
+  color: white;
+}
+
+h1 {
+  text-align: left;
+  color: #ff2d9e;
+  font-family: 'Lexend', sans-serif;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+.summary {
+  background-color: #101010;
+  outline: 1px solid #0a0a0a;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 50px;
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+.top-box {
+  background-color: #ff2d9e; 
+  padding: 10px;
+  font-size: 15px;
+  font-family: 'Lexend', sans-serif;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.top-box a {
+    text-decoration: overline underline #FFFFFF !important;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ff0080;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff2f99;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ce0684;
+}
+
+.banamic {
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px white;
+}

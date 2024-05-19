@@ -1,17 +1,38 @@
-/** stealing from internal-cyth **/
-const trace = function (txt, ty, ...nono) {
-  const ver = { warn: "Warning", info: "Notice" };
-  const hex = { warn: "#ff0019", info: "#ffa600" };
-  const pat = `color: ${hex[ty]}; font-weight: bold; font-family: "Omori"; font-size: 13px;`;
-
-  if (nono.length > 0 || !(ty in ver)) {
-    trace("An exception has occurred while attempting to run a command.", "warn");
-  } else {
-    console.log(`%c[ ${ver[ty]} ] %c${txt}`, pat, '');
+/** Cyth: Banami@Cyberdevil - grabbed from internal-cyth **/
+class Trace {
+  constructor() {
+    this.tracertype = { warn: "Warning", note: "Notice" };
+    this.color = { warn: "#ff0019", note: "#ffa600" };
   }
-};
 
-window.addEventListener("error", (e) => trace(`An exception has occurred: "${e.message}" ${e.filename}:${e.lineno}`, "warn"));
+  trace(txt, ty, ...nono) {
+    const pat = `color: ${this.color[ty]}; font-weight: bold; font-family: Consolas, monospace; font-size: 13px;`;
+
+    if (nono.length > 0 || !(ty in this.tracertype)) {
+      this.trace("An exception occurred while attempting to execute a trace command. Was the trace command written correctly?", "warn");
+    } else if (ty === "warn") {
+      console.error(`%c[ ${this.tracertype[ty]} ] %c${txt}`, pat, '');
+    } else if (ty === "note") {
+      console.warn(`%c[ ${this.tracertype[ty]} ] %c${txt}`, pat, '');      
+    }
+  }
+}
+
+engineLog = new Trace();
+trace = engineLog.trace.bind(engineLog);
+trace("Active.","note");
+
+window.addEventListener('error', function(event) {
+  var cause = event.message;
+  var orgin = event.filename;
+  var linum = event.lineno;
+  var linno = event.colno;
+  var error = event.error || new Error(cause);
+
+  trace(`An exception has occurred during runtime\n${orgin}:${linum}: ${error}`,"warn");
+  event.preventDefault(); 
+  return true;
+});
 
 function hikki() {
   const hueh = new Audio("https://banami.nekoweb.org/files/sounds/bg.mp3");
@@ -48,12 +69,12 @@ function nekoPage(pageName) {
   fetch(url)
     .then((response) => {
       if (!response.ok) {
-        trace("Something went wrong. (how fucking helpful lmao, you on your own for this)", "warn");
+        trace("Something went wrong while handling an action. - No error provided (lol get better.)", "warn");
       }
       return response.json();
     })
     .then((data) => {
-      document.title = data.banamiTitle || "whisper town | in-dev";
+      document.title = data.banamiTitle || "Banami | PukaCyi";
 
       const title = data.banamiTitle ? data.title : data.title;
 
@@ -63,9 +84,9 @@ function nekoPage(pageName) {
       if (banamiPfpStatus != false) {
         banamiPfp.remove();
         banamiPfpStatus = false;
-        trace("pfp removed", "info");
+        trace("banamiPfp removed from state", "info");
       } else {
-        trace("pfp dead lol, doing nothing.", "info");
+        trace("Nothing present on state; Doing nothing..", "info");
       }
 
       if (data.banamiBackground !== undefined) {
@@ -87,8 +108,8 @@ function nekoPage(pageName) {
     })
     .catch((error) => {
       trace(`An exception has occurred: ${error.message}`, "warn");
-      titleMain.textContent = "Womp womp";
-      textMain.innerHTML = "Looks like you just tried making Orange Joe.... guess you didn't like it | actual: you shouldn't be able to see this message. Please refresh your page, and if the problem still persists, please file a bug report over at <a href='https://pukacyi.github.io/Banami'>Github (Issues)</a>.";
+      titleMain.textContent = "Whoops!";
+      textMain.innerHTML = "Something went wrong, but don't fret, let's give it another try! Please refresh the page, and if the problem presists, file a report over at <a href='https://pukacyi.github.io/Banami'>Github (Issues)</a>.";
     });
 }
 
