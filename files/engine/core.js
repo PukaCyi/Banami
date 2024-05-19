@@ -43,7 +43,7 @@ function hikki() {
   hueh.addEventListener("ended", () => {
     hueh.currentTime = 0;
     playAudio();
-    trace("hikki", "info");
+    trace("hikki", "note");
   });
 
   document.body.addEventListener("click", playAudio, { once: true });
@@ -54,7 +54,7 @@ let banamiPfpStatus = true;
 
 function nekoPage(pageName) {
   if (currentPage === pageName) {
-    trace("Already on the same page", "info");
+    trace("Already on the same page", "note");
     return;
   }
 
@@ -84,9 +84,9 @@ function nekoPage(pageName) {
       if (banamiPfpStatus != false) {
         banamiPfp.remove();
         banamiPfpStatus = false;
-        trace("banamiPfp removed from state", "info");
+        trace("banamiPfp removed from state", "note");
       } else {
-        trace("Nothing present on state; Doing nothing..", "info");
+        trace("Nothing present on state; Doing nothing..", "note");
       }
 
       if (data.banamiBackground !== undefined) {
