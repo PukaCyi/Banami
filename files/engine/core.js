@@ -108,8 +108,8 @@ function nekoPage(pageName) {
     })
     .catch((error) => {
       trace(`An exception has occurred: ${error.message}`, "warn");
-      titleMain.textContent = "Whoops!";
-      textMain.innerHTML = "Something went wrong, but don't fret, let's give it another try! Please refresh the page, and if the problem presists, file a report over at <a href='https://pukacyi.github.io/Banami'>Github (Issues)</a>.";
+      titleMain.textContent = "Something went wrong...";
+      textMain.innerHTML = "Don’t fret — let's give it another try! Please refresh the page, and if the problem still occurs, file a report at <a href='https://github.com/PukaCyi/Banami/issues'>Github</a>.";
     });
 }
 
