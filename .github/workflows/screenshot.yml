@@ -11,8 +11,6 @@ jobs:
   screenshots:
     runs-on: ubuntu-latest
     steps:
-      - name: Env ResChange
-        run: xrandr -s 3840x2046
       - name: Sleep
         run: sleep 5
       - uses: karol-brejna-i/webpage-screenshot-action@v1
