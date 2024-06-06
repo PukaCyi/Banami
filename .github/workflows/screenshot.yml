@@ -37,7 +37,7 @@ jobs:
           git commit -m "Screenshot"
       
       - name: Push
-        uses: ad-m/github-push-action@latest
+        uses: actions/checkout@v4
         with:
           branch: main
           github_token: ${{ secrets.GITHUB_TOKEN }}
