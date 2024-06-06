@@ -11,21 +11,28 @@ jobs:
   screenshots:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2 
+
       - name: Sleep
         run: sleep 5
+      
       - uses: karol-brejna-i/webpage-screenshot-action@v1
         with:
           url: https://banami.nekoweb.org/bot.html
+      
       - name: Rename Screenshot
         run: mv screenshot.png hatterene.png
+      
       - name: Prep
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
           git add hatterene.png
           git commit -m "Screenshot"
+      
       - name: Push
         uses: actions/checkout@v4
         with:
-          branch: main
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
