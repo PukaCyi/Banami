@@ -33,6 +33,7 @@ jobs:
           git commit -m "Screenshot"
       
       - name: Push
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          ref: main
+        run: git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
