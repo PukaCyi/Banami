@@ -1,10 +1,14 @@
 name: Upload screenshot
+
 on:
   workflow_dispatch:
   push:
     branches:
       - main
       
+permissions:
+  contents: write
+  
 jobs:
   screenshots:
     runs-on: ubuntu-latest
@@ -15,13 +19,12 @@ jobs:
       - name: Sleep
         run: sleep 5
       
-      - uses: karol-brejna-i/webpage-screenshot-action@v1
+      - name: Take Screenshot
+        uses: karol-brejna-i/webpage-screenshot-action@v1
         with:
           url: https://banami.nekoweb.org/bot.html
-      
-      - name: Rename Screenshot
-        output: hatterene.png
-      
+          output: hatterene.png
+          
       - name: Prep
         run: |
           git config --global user.email "action@github.com"
