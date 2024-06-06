@@ -1,22 +1,43 @@
-name: Site Screenshot
+name: Upload screenshot
 on:
   workflow_dispatch:
   push:
     branches:
       - main
   schedule:
-    - cron:  '0 0 * * *'
+    - cron:  '0 0 * * *'  
 
 jobs:
   screenshots:
     runs-on: ubuntu-latest
     steps:
+      - name: Env ResChange
+        run: xrandr -s 3840x2046
       - name: Sleep
         run: sleep 5
       - uses: karol-brejna-i/webpage-screenshot-action@v1
         with:
           url: https://banami.nekoweb.org/bot.html
-      - uses: actions/upload-artifact@v3
+      - name: Dispatch to Artifact
+        uses: actions/upload-artifact@v3
         with:
           name: hero-screenshot
-          path: ${{ github.workspace }}/*.png
+          path: ${{ github.workspace }}/hatterene.png
+
+      - name: Unpack Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: hero-screenshot
+
+      - name: Prep
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add hatterene
+          git commit -m "Screenshot"
+      
+      - name: Push
+        uses: ad-m/github-push-action@v0.6
+        with:
+          branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
