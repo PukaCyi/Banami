@@ -4,9 +4,7 @@ on:
   push:
     branches:
       - main
-  schedule:
-    - cron: '0 0 * * *'
-
+      
 jobs:
   screenshots:
     runs-on: ubuntu-latest
@@ -22,7 +20,7 @@ jobs:
           url: https://banami.nekoweb.org/bot.html
       
       - name: Rename Screenshot
-        run: mv screenshot.png hatterene.png
+        output: hatterene.png
       
       - name: Prep
         run: |
