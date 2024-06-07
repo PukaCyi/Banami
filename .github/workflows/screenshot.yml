@@ -20,7 +20,7 @@ jobs:
         run: sleep 5
       
       - name: Take Screenshot
-        uses: karol-brejna-i/webpage-screenshot-action@v1
+        uses: PukaCyi/webpage-screenshot-action@v1
         with:
           url: https://banami.nekoweb.org/bot.html
           output: hatterene.png
