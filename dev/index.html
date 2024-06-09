@@ -1,41 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banami [Canary] | Nekoweb</title>
+    <meta property="og:title" content="Banami | Nekoweb">
+    <meta property="og:description" content="A nice central page where Banami (@PukaCyi) gets to write and sound like a nerd about themselves.">
+    <meta property="og:url" content="https://banami.nekoweb.org">
+    <meta property="og:image" content="https://banami.nekoweb.org/files/images/hero-screenshot.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Banami | PukaCyi">
+    <meta name="twitter:description" content="A nice central page where Banami (@PukaCyi) gets to write and sound like a nerd about themselves.">
+    <meta name="twitter:image" content="https://banami.nekoweb.org/files/images/hero-screenshot.png">
+    <meta name="theme-color" content="#FF0059">
+    <link rel="icon" href="files/images/cyi.png">
     <link
       rel="stylesheet"
       href="https://banami.nekoweb.org/files/styles/dev.css"
     />
-    <link rel="icon" href="files/images/cyi.png" />
-    <script src="https://banami.nekoweb.org/files/engine/core.js"></script>
-  </head>
-  <body onload="hikki()">
+</head>
+<body onload="hikki()">
     <div class="neko-box">
-      <div class="neko-title" id="neko-title">PukaCyi (Banami/Cyi)</div>
-      <div class="neko-text" id="neko-text">
-        Ignore the fact that this website is super generic and bland. || This is
-        developer mode, get out of here. This place is unstable.
-      </div>
-      <div class="button-container">
-        <button class="neko-button" onclick="nekoPage('about-me')">
-          About Me
-        </button>
-        <button class="neko-button" onclick="nekoPage('dni')">DNI</button>
-        <button class="neko-button" onclick="nekoPage('interests')">
-          Interests
-        </button>
-        <button class="neko-button" onclick="nekoPage('socials')">
-          Socials
-        </button>
-        <button class="neko-button" onclick="nekoPage('cythentic')">
-          Cyinora OCs
-        </button>
-      </div>
-      <button class="neko-back-button" onclick="window.location.reload();">
-        Back
-      </button>
-    </div>
-  </body>
+        <img src="https://avatars.githubusercontent.com/u/149914478" id="bana-img-pfp" alt="PukaCyi's profile picture">
+        <div class="neko-title" id="neko-title" style="font-weight: bold">Banami (aka PukaCyi/Cyi)</div>
+        <div class="neko-text" id="neko-text">What brings you in here today, reader?</div>
+        <div class="button-container">
+            <button class="neko-button" onclick="nekoPage('about-me')">About Me</button>
+            <button class="neko-button" onclick="nekoPage('dni')">DNI</button>
+            <button class="neko-button" onclick="nekoPage('interests')">Interests</button>
+            <button class="neko-button" onclick="nekoPage('socials')">Socials</button>
+            <button class="neko-button" onclick="nekoPage('cyi')">Cyinora</button>
+        </div>
+        <button class="neko-back-button" onclick="window.location.reload();">Back</button>
+    </div><br><br>
+    <footer>
+        <div align='center'>
+            <a href='https://www.free-website-hit-counter.com' target='_blank'><img src='https://www.free-website-hit-counter.com/c.php?d=9&id=163515&s=39' border='0' alt='Free Website Hit Counter'></a><br / ><small><a href='https://www.free-website-hit-counter.com' title="Free Website Hit Counter" target='_blank'>Free website hit counter</a></small>
+        </div>
+        <a href="https://nekoweb.org/" target="_blank"><img src="https://nekoweb.org/assets/buttons/button1.gif"></a>
+        <div class="banamic" style="margin-bottom: 15px; font-size: 19.5px; color: white; text-decoration: none !important; text-shadow: 0 0 10px white; text-align: center;">
+          <span>
+            <a href="https://banami.nekoweb.org" style="text-decoration: none !important;" target="_blank">Home</a> •
+            <a href="https://banami.nekoweb.org/banami" style="text-decoration: none !important;" target="_blank">PukaCyi Twitter</a> •
+            <a href="https://twitter.com/Cythentic" style="text-decoration: none !important;" target="_blank">Cythentic Twitter</a> •
+            <a href="https://banami.nekoweb.org/sitemap.xml" style="text-decoration: none !important;" target="_blank">Site Map</a>
+          </span>
+        </div>
+    </footer>
+    <script src="files/engine/core.js"></script>
+</body>
 </html>

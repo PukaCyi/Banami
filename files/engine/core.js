@@ -1,4 +1,11 @@
-/** Cyth: Banami@Cyberdevil - grabbed from internal-cyth **/
+error = new Audio("https://banami.nekoweb.org/files/sounds/nope.mp3");
+error.volume = 0.5;
+
+enter = new Audio("https://banami.nekoweb.org/files/sounds/heal.mp3");
+enter.volume = 0.5;
+
+hueh = new Audio("https://banami.nekoweb.org/files/sounds/bg.mp3");
+
 class Trace {
   constructor() {
     this.tracertype = { warn: "Warning", note: "Notice" };
@@ -9,7 +16,7 @@ class Trace {
     const pat = `color: ${this.color[ty]}; font-weight: bold; font-family: Consolas, monospace; font-size: 13px;`;
 
     if (nono.length > 0 || !(ty in this.tracertype)) {
-      this.trace("An exception occurred while attempting to execute a trace command. Was the trace command written correctly?", "warn");
+      this.trace("An error occurred while attempting to execute a trace command. Was the trace command written correctly?", "warn");
     } else if (ty === "warn") {
       console.error(`%c[ ${this.tracertype[ty]} ] %c${txt}`, pat, '');
     } else if (ty === "note") {
@@ -18,24 +25,23 @@ class Trace {
   }
 }
 
-engineLog = new Trace();
-trace = engineLog.trace.bind(engineLog);
-trace("Active.","note");
+const engineLog = new Trace();
+const trace = engineLog.trace.bind(engineLog);
+trace("Trace logger is active.", "warn");
 
 window.addEventListener('error', function(event) {
-  var cause = event.message;
-  var orgin = event.filename;
-  var linum = event.lineno;
-  var linno = event.colno;
-  var error = event.error || new Error(cause);
+  const cause = event.message;
+  const orgin = event.filename;
+  const linum = event.lineno;
+  const linno = event.colno;
+  const error = event.error || new Error(cause);
 
-  trace(`An exception has occurred during runtime\n${orgin}:${linum}: ${error}`,"warn");
+  trace(`An error occurred during runtime\n${orgin}:${linum}: ${error}`,"warn");
   event.preventDefault(); 
   return true;
 });
 
 function hikki() {
-  const hueh = new Audio("https://banami.nekoweb.org/files/sounds/bg.mp3");
   const playAudio = () => {
     hueh.play().then(() => { });
   };
@@ -53,8 +59,11 @@ let currentPage = "";
 let banamiPfpStatus = true;
 
 function nekoPage(pageName) {
+
   if (currentPage === pageName) {
     trace("Already on the same page", "note");
+    error.play();
+    trace("Error play!", "note");
     return;
   }
 
@@ -69,7 +78,9 @@ function nekoPage(pageName) {
   fetch(url)
     .then((response) => {
       if (!response.ok) {
-        trace("Something went wrong while handling an action. - No error provided (lol get better.)", "warn");
+        trace("JSON error.", "warn");
+        error.play();
+        trace("Error play!", "note");
       }
       return response.json();
     })
@@ -81,35 +92,53 @@ function nekoPage(pageName) {
       titleMain.innerHTML = title;
       textMain.innerHTML = parseText(data.text);
 
-      if (banamiPfpStatus != false) {
+      if (banamiPfpStatus !== false) {
         banamiPfp.remove();
         banamiPfpStatus = false;
-        trace("banamiPfp removed from state", "note");
+        trace("Removed avatar from state", "note");
       } else {
-        trace("Nothing present on state; Doing nothing..", "note");
+        trace("Avatar isn't on state. Doing nothing.", "note");
       }
+    
+    if (data.banamiBackground !== undefined) {
+      body.style.backgroundImage = `url(${data.banamiBackground})`;
+      body.style.position = "fixed";
+      body.style.top = "0";
+      body.style.left = "0";
+      body.style.width = "100%";
+      body.style.height = "100%";
+      body.style.backgroundRepeat = "no-repeat";
+      body.style.backgroundSize = "cover";
+      body.style.backgroundPosition = "center";
+      body.style.zIndex = "-1";
+    } else {
+      body.style.backgroundImage = '';
+      body.style.position = '';
+      body.style.top = '';
+      body.style.left = '';
+      body.style.width = '';
+      body.style.height = '';
+      body.style.backgroundRepeat = '';
+      body.style.backgroundSize = '';
+      body.style.backgroundPosition = '';
+      body.style.zIndex = '';
+    }
 
-      if (data.banamiBackground !== undefined) {
-        body.style.backgroundImage = `url(${data.banamiBackground})`;
-        body.style.position = "fixed";
-        body.style.top = "0";
-        body.style.left = "0";
-        body.style.width = "100%";
-        body.style.height = "100%";
-        body.style.backgroundRepeat = "no-repeat";
-        body.style.backgroundSize = "cover";
-        body.style.backgroundPosition = "center";
-        body.style.zIndex = "-1";
-      }
+
+      
+      trace("Enter play!", "note");
+      enter.play();
 
       backButton.style.display = "inline-block";
 
       currentPage = pageName;
     })
     .catch((error) => {
-      trace(`An exception has occurred: ${error.message}`, "warn");
-      titleMain.textContent = "Something went wrong...";
-      textMain.innerHTML = "Don’t fret — let's give it another try! Please refresh the page, and if the problem still occurs, file a report at <a href='https://github.com/PukaCyi/Banami/issues'>Github</a>.";
+      trace(`An error occurred: ${error.message}`, "warn");
+      error.play();
+      trace("Error play!", "note");
+      titleMain.textContent = "Whoops!";
+      textMain.innerHTML = "Don’t fret — let's give it another try! Please refresh the page, and if the problem presists, file a report at <a href='https://github.com/PukaCyi/Banami/issues'>Github</a>.";
     });
 }
 

@@ -56,7 +56,6 @@ body {
   border-radius: 0.4em;
   padding: 5em;
   min-width: 19%;
-  width: 400px;
   scale: 115%; /**lazy to resize the stuff **/
   max-width: 15%;
   word-wrap: break-word;
