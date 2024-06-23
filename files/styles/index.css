@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Omori";
-  src: url("https://banami.nekoweb.org/files/fonts/omori.ttf") format("truetype");
+  src: url("/files/fonts/omori.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "SOMETHING";
-  src: url("https://banami.nekoweb.org/files/fonts/omori-scary.ttf") format("truetype");
+  src: url("/files/fonts/omori-scary.ttf") format("truetype");
 }
 
 * {
@@ -15,13 +15,13 @@
 html {
   height: 100%;
   background-color: rgb(10, 10, 10);
-  background-image: url("https://banami.nekoweb.org/files/images/main.jfif");
+  background-image: url("/files/images/main.jfif");
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
 }
 
-body {
+.grabber {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,6 +35,7 @@ body {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.195);
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); /* support for other browsers lel*/
   color: white;
   border: 7px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 0 20px 3px black;

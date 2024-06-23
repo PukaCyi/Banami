@@ -1,55 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banami | PukaCyi</title>
-    <meta property="og:title" content="Banami | Nekoweb">
-    <meta property="og:description" content="A nice central page where Banami (@PukaCyi) gets to write and sound like a nerd about themselves.">
-    <meta property="og:url" content="https://banami.nekoweb.org">
-    <meta property="og:image" content="https://banami.nekoweb.org/files/images/hero-screenshot.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Banami | PukaCyi">
-    <meta name="twitter:description" content="A nice central page where Banami (@PukaCyi) gets to write and sound like a nerd about themselves.">
-    <meta name="twitter:image" content="https://banami.nekoweb.org/files/images/hero-screenshot.png">
-    <meta name="theme-color" content="#FF0059">
-    <link rel="icon" href="files/images/cyi.png">
-    <link rel="stylesheet" href="files/styles/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banami | PukaCyi</title>
+  <meta property="og:title" content="Banami | Nekoweb">
+  <meta property="og:description" content="A nice central page where Banami (@PukaCyi) gets to write and sound like a nerd about themselves.">
+  <meta property="og:url" content="https://banami.nekoweb.org">
+  <meta property="og:image" content="https://banami.nekoweb.org/files/images/hero-screenshot.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Banami | PukaCyi">
+  <meta name="twitter:description" content="A nice central page where Banami (@PukaCyi) gets to write and sound like a nerd about themselves.">
+  <meta name="twitter:image" content="https://banami.nekoweb.org/files/images/hero-screenshot.png">
+  <meta name="theme-color" content="#FF0059">
+  <link rel="icon" href="files/images/cyi.png">
+  <link rel="stylesheet" href="files/styles/index.css">
+  <style>
+    .error {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      color: black;
+      background: white;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+    .top-box {
+      background-color: #ff2d9e;
+      padding: 10px;
+      font-size: 25px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 1em;
+    }
+  </style>
 </head>
 <body onload="hikki()">
+  <div class="top-box">
+    <marquee>
+      this site contains outdated info that I won't update for now (last update: 2024/23/06)
+    </marquee>
+  </div>
+  <noscript class="error">
+    This site utilizes Javascript in order to function properly. Please enable Javascript on your browser or use a supported device.
+  </noscript>
+  <div class="grabber">
     <script src="files/engine/core.js"></script>
     <div class="neko-box">
-        <img src="https://avatars.githubusercontent.com/u/149914478" id="bana-img-pfp" alt="PukaCyi's profile picture">
-        <div class="neko-title" id="neko-title" style="font-weight: bold">Banami (aka PukaCyi/Cyi)</div>
-        <div class="neko-text" id="neko-text">What brings you in here today, reader?</div>
-        <div class="button-container">
-            <button class="neko-button" onclick="nekoPage('about-me')">About Me</button>
-            <button class="neko-button" onclick="nekoPage('dni')">DNI</button>
-            <button class="neko-button" onclick="nekoPage('interests')">Interests</button>
-            <button class="neko-button" onclick="nekoPage('socials')">Socials</button>
-            <button class="neko-button" onclick="nekoPage('cyi')">Cyinora</button>
-        </div>
-        <button class="neko-back-button" onclick="window.location.reload();">Back</button>
-    </div><br><br>
-<footer>
-    <div style="text-align: center;">
-        <a href='https://www.free-website-hit-counter.com' target='_blank'><img src='https://www.free-website-hit-counter.com/c.php?d=9&id=163515&s=39' border='0' alt='Free Website Hit Counter'></a><br />
-        <small><a href='https://www.free-website-hit-counter.com' title="Free Website Hit Counter" target='_blank'>Free website hit counter</a></small>
+      <img src="https://avatars.githubusercontent.com/u/149914478" id="bana-img-pfp" alt="PukaCyi's profile picture">
+      <div class="neko-title" id="neko-title" style="font-weight: bold;">
+        Banami (aka PukaCyi/Cyi)
+      </div>
+      <div class="neko-text" id="neko-text">
+        What brings you in here today, reader?
+      </div>
+      <div class="button-container">
+        <button class="neko-button" type="submit" onclick="nekoPage('about-me')">About Me</button>
+        <button class="neko-button" type="submit" onclick="nekoPage('dni')">DNI</button>
+        <button class="neko-button" type="submit" onclick="nekoPage('interests')">Interests</button>
+        <button class="neko-button" type="submit" onclick="nekoPage('socials')">Socials</button>
+        <button class="neko-button" type="submit" onclick="nekoPage('cyi')">Cyinora</button>
+      </div>
+      <button class="neko-back-button" type="reset" onclick="window.location.reload();">Back</button>
     </div>
-    <div style="text-align: center; color: white; text-shadow: 0 0 5px black; font-weight: bold">
-        <a href="https://nekoweb.org/" target="_blank"><img src="https://nekoweb.org/assets/buttons/button1.gif"></a>
-        <br><span style="font-size: 20px; text-shadow: 0 0 black">© 2023-2024 PukaCyi</span>
-    </div>
-    <div class="banamic" style="margin-bottom: 15px; font-size: 19.5px; color: white; text-decoration: none !important; text-shadow: 0 0 8px black; text-align: center;">
+    <br><br>
+    <footer>
+      <div style="text-align: center;">
+        <a href="https://www.free-website-hit-counter.com" target="_blank"><img src="https://www.free-website-hit-counter.com/c.php?d=9&amp;id=163515&amp;s=39" border="0" alt="Free Website Hit Counter"></a><br>
+        <small><a href="https://www.free-website-hit-counter.com" title="Free Website Hit Counter" target="_blank">Free website hit counter</a></small>
+      </div>
+      <div style="text-align: center; color: white; text-shadow: 0 0 5px black; font-weight: bold;">
+        <a href="https://nekoweb.org/" target="_blank"><img src="https://nekoweb.org/assets/buttons/button1.gif"></a><br>
+        <span style="font-size: 20px; text-shadow: 0 0 black;">© 2023-2024 PukaCyi</span>
+      </div>
+      <div class="banamic" style="margin-bottom: 15px; font-size: 19.5px; color: white; text-decoration: none !important; text-shadow: 0 0 8px black; text-align: center;">
         <span>
-            <a href="https://banami.nekoweb.org" style="text-decoration: none !important;" target="_blank">Home</a> •
-            <a href="https://banami.nekoweb.org/banami" style="text-decoration: none !important;" target="_blank">PukaCyi Twitter</a> •
-            <a href="https://twitter.com/Cythentic" style="text-decoration: none !important;" target="_blank">Cythentic Twitter</a> •
-            <a href="https://banami.nekoweb.org/sitemap.xml" style="text-decoration: none !important;" target="_blank">Site Map</a>
-        </span>
-        <br>
+          <a href="https://banami.nekoweb.org" style="text-decoration: none !important;" target="_blank">Home</a>
+          •
+          <a href="https://banami.nekoweb.org/banami" style="text-decoration: none !important;" target="_blank">PukaCyi Twitter</a>
+          •
+          <a href="https://twitter.com/Cythentic" style="text-decoration: none !important;" target="_blank">Cythentic Twitter</a>
+          •
+          <a href="https://banami.nekoweb.org/sitemap.xml" style="text-decoration: none !important;" target="_blank">Site Map</a>
+        </span><br>
         <span>This site uses content from OMORI, a video game by OMOCAT (the company). OMORI is a trademark of OMOCAT; OMOCAT, LLC is not affiliated with PukaCyi or the website.</span>
-    </div>
-</footer>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
